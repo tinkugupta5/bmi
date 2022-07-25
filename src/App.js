@@ -6,8 +6,8 @@ import React, {useState} from 'react'
 function App() {
 
   // state
-  const [weight, setWeight] = useState(0)
-  const [height, setHeight] = useState(0)
+  const [weight, setWeight] = useState()
+  const [height, setHeight] = useState()
   const [bmi, setBmi] = useState('')
   const [message, setMessage] = useState('')
 
@@ -33,20 +33,6 @@ function App() {
     }
   }
 
-  //  show image based on bmi calculation
-  // let imgSrc;
-
-  // if (bmi < 1) {
-  //   imgSrc = null
-  // } else {
-  //   if(bmi < 25) {
-  //     imgSrc = require('../src/assets/underweight.png')
-  //   } else if (bmi >= 25 && bmi < 30) {
-  //     imgSrc = require('../src/assets/healthy.png')
-  //   } else {
-  //     imgSrc = require('../src/assets/overweight.png')
-  //   }
-  // }
 
   let reload = () => {
     window.location.reload()
@@ -60,12 +46,12 @@ function App() {
 
         <div>
           <label>Weight (lbs)</label>
-          <input value={weight} onChange={(e) => setWeight(e.target.value)} />
+          <input type="text" placeholder='Enter Weight value' value={weight} onChange={(e) => setWeight(e.target.value)} />
         </div>
 
         <div>
           <label>Height (in)</label>
-          <input value={height} onChange={(event) => setHeight(event.target.value)} />
+          <input type="text" placeholder='Enter height value' value={height} onChange={(event) => setHeight(event.target.value)} />
         </div>
 
         <div>
@@ -79,9 +65,7 @@ function App() {
         <p>{message}</p>
       </div>
 
-      {/* <div className='img-container'>
-        <img src={imgSrc} alt=''></img>
-      </div> */}
+      
     </div>
   </div>
   );
