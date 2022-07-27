@@ -36,6 +36,7 @@ function App() {
     window.location.reload()
   }
 
+  
   return (
     <div className="app">
     <div className='container'>
